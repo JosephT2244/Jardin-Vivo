@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio - Jardín Vivo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="index-page">
+
+<!-- Encabezado superior -->
+<header class="header-nav">
+  <div class="container">
+    <div class="left-header">
+      <div class="btn-menu">
+        <label for="btn-menu">☰</label>
+      </div>
+      <div class="logo-title">
+        <img src="logo.png" alt="Logo Jardín" class="logo-img">
+        <div class="h1">Jardín Vivo<br><span>Plantas del CECyT</span></div>
+      </div>
+    </div>
+    <nav class="menu">
+      <a href="tipos.html">Tipos de Plantas</a>
+      <a href="cecyt.html">Plantas del CECyT</a>
+      <a href="mes.html">Plantas del Mes</a>
+      <a href="biopreparadores.html">Biopreparadores</a>
+    </nav>
+  </div>
+</header>
+
+
+  <!-- Menú lateral -->
+  <input type="checkbox" id="btn-menu">
+  <div class="container-menu">
+    <div class="cont-menu">
+      <label for="btn-menu" class="close-btn">✖</label>
+      <nav>
+        <a href="index.html" class="active">Inicio</a>
+        <a href="tipos.html">Tipos de Plantas</a>
+        <a href="cecyt.html">Plantas del CECyT</a>
+        <a href="mes.html">Plantas del Mes</a>
+        <a href="biopreparadores.html">Biopreparadores</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Sección principal -->
+  <main class="inicio">
+    <section class="bienvenida">
+      <img src="jardin_cecyt.jpg" alt="Jardín Vivo CECyT" class="hero-img">
+
+      <div class="overlay">
+        <div class="text-box">
+          <h1>🌿 Bienvenido a <span>Jardín Vivo</span></h1>
+          <p>
+            Descubre la biodiversidad del CECyT, donde cada planta tiene una historia,
+            una función ecológica y un valor educativo. 🌺
+          </p>
+          <a href="cecyt.html" class="btn-explorar">Explorar el Jardín</a>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="intro">
+      <h2>Un espacio de aprendizaje y conservación</h2>
+      <p>El <b>Jardín Vivo</b> del CECyT es un proyecto que combina ciencia, ecología y educación. Aquí encontrarás desde especies nativas que contribuyen al equilibrio ambiental, hasta plantas utilizadas en la medicina tradicional o la investigación científica.</p>
+
+      <div class="image-row">
+        <div class="image-container effect-zoom">
+          <img src="jardin_cecyt.jpg" alt="Jardín del CECyT">
+          <div class="image-caption">Nuestro jardín ecológico dentro del CECyT.</div>
+        </div>
+        <div class="image-container effect-zoom">
+          <img src="plantas_varias.jpg" alt="Diversidad de plantas">
+          <div class="image-caption">Diversidad de especies cultivadas.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="destacados">
+      <h2>Explora nuestras secciones</h2>
+      <div class="cards">
+        <div class="card">
+          <img src="tipos_portada.jpg" alt="Tipos de plantas">
+          <h3><a href="tipos.html">Tipos de Plantas</a></h3>
+          <p>Conoce las principales categorías: herbáceas, arbustivas y cactáceas, con ejemplos y fotografías.</p>
+        </div>
+
+        <div class="card">
+          <img src="cecyt_portada.jpg" alt="Plantas del CECyT">
+          <h3><a href="cecyt.html">Plantas del CECyT</a></h3>
+          <p>Descubre las especies que crecen en nuestro propio jardín y su importancia ecológica.</p>
+        </div>
+
+        <div class="card">
+          <img src="mes_portada.jpg" alt="Planta del mes">
+          <h3><a href="mes.html">Planta del Mes</a></h3>
+          <p>Cada mes, una planta protagonista: sus características, cuidados y curiosidades.</p>
+        </div>
+
+        <div class="card">
+          <img src="biopreparadores_portada.jpg" alt="Biopreparadores">
+          <h3><a href="biopreparadores.html">Biopreparadores</a></h3>
+          <p>Aprende sobre extractos naturales, biofertilizantes y preparados ecológicos.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>🌱 Jardín Vivo - Proyecto de Conservación del CECyT</p>
+    <div class="footer-links">
+      <a href="https://www.instagram.com/jardin_hgo_vivo?igsh=MXA2OTJjcDdxNHU3aQ==" target="_blank">Instagram</a> |
+      <a href="https://facebook.com/" target="_blank">Facebook</a> |
+      <a href="mailto:contacto@cecyt.mx">Contacto</a>
+    </div>
+  </footer>
+
+<script>
+  const btnMenu = document.getElementById('btn-menu');
+  const containerMenu = document.querySelector('.container-menu');
+  const contMenu = document.querySelector('.cont-menu');
+  containerMenu.addEventListener('click', function(e) {
+    if (!contMenu.contains(e.target)) {
+      btnMenu.checked = false;
+    }
+  });
+</script>
+
+</body>
+</html>

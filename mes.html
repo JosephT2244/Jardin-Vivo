@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plantas del Mes - Jardín Vivo</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="plantas-mes-page">
+
+<header class="header-nav">
+  <div class="container">
+    <div class="left-header">
+      <div class="btn-menu">
+        <label for="btn-menu">☰</label>
+      </div>
+      <div class="logo-title">
+        <img src="logo.png" alt="Logo Jardín" class="logo-img">
+        <div class="h1">Jardín Vivo<br><span>Plantas del Mes</span></div>
+      </div>
+    </div>
+    <nav class="menu">
+      <a href="#introduccion">Plantas del Mes</a>
+      <a href="#cempasuchil">Cempasúchil</a>
+      <a href="#tepozan">Tepozán Blanco</a>
+      <a href="#chupamiel">Chupamiel Rosa</a>
+    </nav>
+  </div>
+</header>
+
+<input type="checkbox" id="btn-menu">
+<div class="container-menu">
+  <div class="cont-menu">
+    <label for="btn-menu" class="close-btn">✖</label>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="tipos.html">Tipos de Plantas</a>
+      <a href="cecyt.html">Plantas del CECyT</a>
+      <a href="mes.html" class="active">Plantas del Mes</a>
+      <a href="biopreparadores.html">Biopreparadores</a>
+    </nav>
+  </div>
+</div>
+
+<main class="infografia">
+
+  <!-- INTRODUCCIÓN -->
+  <section class="introduccion" id="introduccion">
+    <h2>Plantas del Mes de Octubre</h2>
+    <p>Las <b>Plantas del Mes</b> son especies destacadas por su valor cultural, ecológico y estético durante un periodo específico del año. 
+    En octubre, el <b>cempasúchil silvestre</b>, el <b>tepozan blanco</b> y el <b>chupamiel rosa</b> son seleccionadas por ser de temporada, por su importancia en tradiciones, polinización y belleza en el Jardín Vivo.</p>
+    <p>Estas plantas se asocian con la llegada del otoño, festividades culturales y el inicio de procesos de polinización que benefician a los ecosistemas locales.</p>
+  </section>
+
+  <!-- PLANTAS EN ESTILO CARD -->
+  <section class="plantas-mes">
+
+    <!-- CEMPASÚCHIL SILVESTRE -->
+    <div class="card-planta" id="cempasuchil" data-infografia="Cempasúchil Silvestre.png">
+      <img src="cempasuchil1.jpg" alt="Cempasúchil Silvestre">
+      <div class="card-content">
+        <h3>Cempasúchil Silvestre <span>(Tagetes Lunulata)</span></h3>
+        <p><b>Tipo:</b> Herbácea | <b>Origen:</b> México y Centroamérica</p>
+        <p><b>Características:</b> Flores naranjas vibrantes, muy aromáticas.</p>
+        <p><b>Asociación:</b> Tradicional en el Día de Muertos.</p>
+        <p class="curiosidad"><b>Dato curioso:</b> Atrae abejas y mariposas, favoreciendo la polinización.</p>
+      </div>
+    </div>
+
+    <!-- TEPOZÁN BLANCO -->
+    <div class="card-planta" id="tepozan" data-infografia="Tepozan Blanco.png">
+      <img src="tepozan1.jpg" alt="Tepozán Blanco">
+      <div class="card-content">
+        <h3>Tepozán Blanco <span>(Buddleja Cordata)</span></h3>
+        <p><b>Tipo:</b> Arbusto | <b>Origen:</b> México</p>
+        <p><b>Características:</b> Flores blancas fragantes.</p>
+        <p><b>Asociación:</b> Símbolo de pureza y tradición.</p>
+        <p class="curiosidad"><b>Dato curioso:</b> Sus flores atraen mariposas monarca durante su migración.</p>
+      </div>
+    </div>
+
+    <!-- CHUPAMIEL ROSA -->
+    <div class="card-planta" id="chupamiel" data-infografia="Chupamiel Rosa.png">
+      <img src="chupamiel1.jpg" alt="Chupamiel Rosa">
+      <div class="card-content">
+        <h3>Chupamiel Rosa <span>(Lamourouxia Dasyantha)</span></h3>
+        <p><b>Tipo:</b> Herbácea | <b>Origen:</b> México</p>
+        <p><b>Características:</b> Flores tubulares rosas muy atractivas.</p>
+        <p><b>Asociación:</b> Favorece la alimentación de colibríes.</p>
+        <p class="curiosidad"><b>Dato curioso:</b> Su néctar es muy apreciado por polinizadores especializados.</p>
+      </div>
+    </div>
+
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>🌱 Jardín Vivo - Proyecto de Conservación del CECyT</p>
+  <div class="footer-links">
+    <a href="https://www.instagram.com/jardin_hgo_vivo" target="_blank">Instagram</a> |
+    <a href="https://facebook.com/" target="_blank">Facebook</a> |
+    <a href="mailto:contacto@cecyt.mx">Contacto</a>
+  </div>
+</footer>
+
+<script>
+  // Cerrar menú lateral
+  const btnMenu = document.getElementById('btn-menu');
+  const containerMenu = document.querySelector('.container-menu');
+  const contMenu = document.querySelector('.cont-menu');
+  containerMenu.addEventListener('click', function(e) {
+    if (!contMenu.contains(e.target)) btnMenu.checked = false;
+  });
+
+  // Mostrar infografía por planta
+  const plantaCards = document.querySelectorAll('.card-planta');
+  const overlay = document.createElement('div');
+  overlay.classList.add('fullscreen-overlay');
+  const fullscreenImage = document.createElement('img');
+  overlay.appendChild(fullscreenImage);
+  document.body.appendChild(overlay);
+
+  overlay.addEventListener('click', () => overlay.classList.remove('show'));
+
+  plantaCards.forEach(card => {
+    card.addEventListener('click', () => {
+      const imgPath = card.dataset.infografia;
+      fullscreenImage.src = imgPath;
+      overlay.classList.add('show');
+    });
+  });
+</script>
+
+</body>
+</html>
